@@ -1,0 +1,5 @@
+<div ng-controller="cwLayoutConfigEditor" class="cwLayoutConfigEditor cw-visible">
+	<div class="save-config"><a class="btn-save btn page-action no-text" title="{{$root.i18n('label_submit_configuration')}}" ng-click="submit($event)"><i class="fa fa-floppy-o" aria-hidden="true"></i></a></div>
+	<div class="operations-wrapper" ng-include="operationTemplatePath"></div>
+	<div ng-if="isContentAvailable()" class="save-config"><a class="btn-save btn page-action no-text" title="{{$root.i18n('label_submit_configuration')}}" ng-click="submit($event)"><i class="fa fa-floppy-o" aria-hidden="true"></i></a></div>
+</div>

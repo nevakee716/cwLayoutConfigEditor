@@ -1,0 +1,37 @@
+<div ng-if="isContentAvailable()" class="calculation-fields-container">
+	<div class="tabs">
+		<div ng-repeat="(i, op) in Operations | orderBy:'Order'" ng-class="{active: op.selected == true}" class="tab-link tab-{{op.Id}}" ng-click="displayOperation(op.Id)" data-id="{{op.Id}}">{{op.Label}}</div>
+		<div class="add-tab-link" >
+			<a class="btn-add-operation btn page-action no-text" title="{{$root.i18n('label_add_operation')}}" ng-click="addOperation($event)"><i class="fa fa-plus" aria-hidden="true"></i></a>
+			</div>
+	</div>
+	<div class="tabContent" ng-if="op.selected" ng-repeat="(i, op) in OperationsById" id="{{op.Id}}">
+		<!-- <div class="" > -->
+			<div class="remove-operation">
+				<a class="btn-remove btn page-action no-text" data-id="{{op.Id}}" title="{{$root.i18n('label_remove_operation')}}" ng-click="removeOperation($event, op.Id)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+			</div>
+			<div class="bootstrap-iso row">
+				<div class="row-cell row-cell-label">{{$root.i18n('label_name')}} : </div>
+				<div class="row-cell row-cell-value"><input ng-model="op.Label"></div>
+			</div>
+			<div class="bootstrap-iso row">
+				<div class="row-cell row-cell-label">{{$root.i18n('label_description')}} : </div>
+				<div class="row-cell row-cell-value row-cell-value-textarea"><textarea ng-model="op.Description"></textarea></div>
+			</div>
+			<div class="bootstrap-iso row">
+				<div class="row-cell row-cell-label">{{$root.i18n('label_typeoperation')}} : </div>
+				<div class="row-cell row-cell-value"><select ng-model="op.Type" ng-options="x as $root.i18n('typeoperation_'+ x) for (x , y) in templateByTypeOfOperation" ng-change="updateOperationType(op)"></select></div>
+			</div>
+			<div class="bootstrap-iso row">
+				<div class="row-cell row-cell-label">{{$root.i18n('label_order')}} : </div>
+				<div class="row-cell row-cell-value"><input type="number" ng-model="op.Order"></div>
+			</div>
+			<div class="calculation-type-wrapper" ng-repeat="(x, y) in templateByTypeOfOperation" ng-if="op.Type==x" ng-include="y"></div>
+		<!-- </div> -->
+	</div>
+</div>
+<div ng-if="!isContentAvailable()" class="">
+	<div class="add-first-operation-button">
+		<a class="btn-add-first-operation btn page-action" ng-click="addOperation($event)">{{$root.i18n('label_add_operation')}}</a>
+	</div>
+</div>

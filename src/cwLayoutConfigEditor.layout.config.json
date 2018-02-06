@@ -1,0 +1,6 @@
+{
+	"Name": "cw-layout-config-editor",
+	"DisplayName": "Configuration editor",
+	"Description": "Edit a configuration for all API operations",
+	"JavaScriptClassName": "cwLayoutConfigEditor"
+}

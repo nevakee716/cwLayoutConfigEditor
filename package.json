@@ -1,0 +1,21 @@
+{
+  "name": "cwLayoutConfigEditor",
+  "description": "Allow you to create configurations for operation using a UI",
+  "version": "1.0.0",
+  "main": "cwLayoutConfigEditor.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JGrndn/cwLayoutConfigEditor"
+  },
+  "author": "Jerome GRONDIN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JGrndn/cwLayoutConfigEditor/issues"
+  },
+  "homepage": "",
+  "wiki": "https://github.com/JGrndn/cwLayoutConfigEditor/wiki",
+  "evolve-version": "4.0 - 4.2"
+}
