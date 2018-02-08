@@ -84,8 +84,8 @@
 
     $scope.templateByTypeOfOperation = {
       'CalculateOnSelf': that.getTemplatePath('CalculationFields', 'Template_CalculateOnSelf'),
-      'CalculateWithList': that.getTemplatePath('CalculationFields', 'Template_CalculateWithList')/*,
-      'CalculateWithIndependantList': that.getTemplatePath('CalculationFields', 'Template_CalculateWithIndependantList'),
+      'CalculateWithList': that.getTemplatePath('CalculationFields', 'Template_CalculateWithList'),
+      'CalculateWithIndependantList': that.getTemplatePath('CalculationFields', 'Template_CalculateWithIndependantList'),/*
       'Update': that.getTemplatePath('CalculationFields', 'Template_Update')*/
     };
 
