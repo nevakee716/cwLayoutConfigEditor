@@ -39,7 +39,7 @@
   
   <meta name="pjax-timeout" content="1000">
   
-  <meta name="request-id" content="AF99:39FA:D99EB4:1774E52:5A7C4D90" data-pjax-transient>
+  <meta name="request-id" content="D0AA:39FD:13E0936:21A958E:5A7C7901" data-pjax-transient>
   
 
   <meta name="selected-link" value="repo_source" data-pjax-transient>
@@ -49,7 +49,7 @@
   <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="AF99:39FA:D99EB4:1774E52:5A7C4D90" name="octolytics-dimension-request_id" /><meta content="iad" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="D0AA:39FD:13E0936:21A958E:5A7C7901" name="octolytics-dimension-request_id" /><meta content="iad" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" />
 <meta content="https://github.com/hydro_browser_events" name="hydro-events-url" />
 <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location" />
 
@@ -65,11 +65,11 @@
   <meta name="user-login" content="">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="ZTVkZmViNGMxMGQzZGZkMDNmZTg1ZjRhNmI3Nzk3NmMyNjE3MjZkYTk0MzViNjIwMDlhYzQxN2UxZTBlODQyZnx7InJlbW90ZV9hZGRyZXNzIjoiODkuOTAuMTU4LjEwOCIsInJlcXVlc3RfaWQiOiJBRjk5OjM5RkE6RDk5RUI0OjE3NzRFNTI6NUE3QzREOTAiLCJ0aW1lc3RhbXAiOjE1MTgwOTU3NjEsImhvc3QiOiJnaXRodWIuY29tIn0=">
+    <meta name="js-proxy-site-detection-payload" content="YmZjZmUzMThjMDllYzcyNzg3NjIwOGI2NWY3Y2FmNjQyYzljMWRkYjdmOTZlMzBmMzI5ODNlMjU2NDliMzczYXx7InJlbW90ZV9hZGRyZXNzIjoiODkuOTAuMTU4LjEwOCIsInJlcXVlc3RfaWQiOiJEMEFBOjM5RkQ6MTNFMDkzNjoyMUE5NThFOjVBN0M3OTAxIiwidGltZXN0YW1wIjoxNTE4MTA2ODgzLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
 
     <meta name="enabled-features" content="UNIVERSE_BANNER,FREE_TRIALS,MARKETPLACE_HERO_CARD_UPLOADER">
 
-  <meta name="html-safe-nonce" content="4e6771bf08d8d4d4986a56e3713db12b021f769e">
+  <meta name="html-safe-nonce" content="5c74a3b20899b8cd802eb073c15a63d64634058c">
 
   <meta http-equiv="x-pjax-version" content="7e519e46694aa83b09693a70cf2d601c">
   
@@ -311,7 +311,7 @@
       <div class="signup-prompt-bg rounded-1">
       <div class="signup-prompt p-4 text-center mb-4 rounded-1">
         <div class="position-relative">
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/site/dismiss_signup_prompt" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="qL0z5xdUD0fnUL+8sr5tgPGNdqBVN3jJy4TfLXwqTeiwqMVujUG1Tv+B522MCXom00RrTMJ1VUJrdb7ySxzPIA==" /></div>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/site/dismiss_signup_prompt" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="U9X/Jq4fzvcCByQwlQ/qvQGHxMYvl9o1TCGpFo77sD/x0q/SravrYK2VzGjRgDUWPJq6gSQNZ4YpwbxBpjIHrA==" /></div>
             <button type="submit" class="position-absolute top-0 right-0 btn-link link-gray" data-ga-click="(Logged out) Sign up prompt, clicked Dismiss, text:dismiss">
               Dismiss
             </button>
@@ -348,7 +348,7 @@
           <a data-pjax href="/JGrndn/cwLayoutConfigEditor/commits/master">
               <svg aria-hidden="true" class="octicon octicon-history" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M8 13H6V6h5v2H8v5zM7 1C4.81 1 2.87 2.02 1.59 3.59L0 2v4h4L2.5 4.5C3.55 3.17 5.17 2.3 7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-.34.03-.67.09-1H.08C.03 7.33 0 7.66 0 8c0 3.86 3.14 7 7 7s7-3.14 7-7-3.14-7-7-7z"/></svg>
               <span class="num text-emphasized">
-                6
+                9
               </span>
               commits
           </a>
@@ -389,21 +389,21 @@
                 <a href="/JGrndn/cwLayoutConfigEditor/search?l=javascript"  data-ga-click="Repository, language stats search click, location:repo overview">
                   <span class="color-block language-color" style="background-color:#f1e05a;"></span>
                   <span class="lang">JavaScript</span>
-                  <span class="percent">51.6%</span>
+                  <span class="percent">50.4%</span>
                 </a>
             </li>
             <li>
                 <a href="/JGrndn/cwLayoutConfigEditor/search?l=html"  data-ga-click="Repository, language stats search click, location:repo overview">
                   <span class="color-block language-color" style="background-color:#e34c26;"></span>
                   <span class="lang">HTML</span>
-                  <span class="percent">37.4%</span>
+                  <span class="percent">38.9%</span>
                 </a>
             </li>
             <li>
                 <a href="/JGrndn/cwLayoutConfigEditor/search?l=css"  data-ga-click="Repository, language stats search click, location:repo overview">
                   <span class="color-block language-color" style="background-color:#563d7c;"></span>
                   <span class="lang">CSS</span>
-                  <span class="percent">11.0%</span>
+                  <span class="percent">10.7%</span>
                 </a>
             </li>
           </ol>
@@ -413,9 +413,9 @@
   </div>
 
     <div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
-      <span class="language-color" aria-label="JavaScript 51.6%" style="width:51.6%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
-      <span class="language-color" aria-label="HTML 37.4%" style="width:37.4%; background-color:#e34c26;" itemprop="keywords">HTML</span>
-      <span class="language-color" aria-label="CSS 11.0%" style="width:11.0%; background-color:#563d7c;" itemprop="keywords">CSS</span>
+      <span class="language-color" aria-label="JavaScript 50.4%" style="width:50.4%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+      <span class="language-color" aria-label="HTML 38.9%" style="width:38.9%; background-color:#e34c26;" itemprop="keywords">HTML</span>
+      <span class="language-color" aria-label="CSS 10.7%" style="width:10.7%; background-color:#563d7c;" itemprop="keywords">CSS</span>
     </div>
 
 
@@ -556,7 +556,7 @@
 
   
 
-<include-fragment class="commit-tease commit-loader" src="/JGrndn/cwLayoutConfigEditor/tree-commit/bfa513b692a889341e83930f13be20d6db1bb9b2">
+<include-fragment class="commit-tease commit-loader" src="/JGrndn/cwLayoutConfigEditor/tree-commit/2f1fda5f422534488faefaef8bf34c7233724ce5">
   <div class="blank">
     <img alt="" class="loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" />
     Fetching latest commit…
@@ -569,7 +569,7 @@
 
 <div class="file-wrap">
 
-  <a href="/JGrndn/cwLayoutConfigEditor/tree/bfa513b692a889341e83930f13be20d6db1bb9b2" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+  <a href="/JGrndn/cwLayoutConfigEditor/tree/2f1fda5f422534488faefaef8bf34c7233724ce5" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
   <table class="files js-navigation-container js-active-navigation-container" data-pjax>
 
@@ -586,15 +586,15 @@
             <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/tree/master/dist" class="js-navigation-open" id="2a6d07eef8b10b84129b42424ed99327-2251d7916ac483977589ec9ef095c07bd61d00a5" title="dist">dist</a></span>
+            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/tree/master/dist" class="js-navigation-open" id="2a6d07eef8b10b84129b42424ed99327-8f9274d7010aac8aada1f510f8a4466b439a2328" title="dist">dist</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
-                  <a href="/JGrndn/cwLayoutConfigEditor/commit/69b256680ee9b55b864f3fd18da95b504056069d" class="message" data-pjax="true" title="new package">new package</a>
+                  <a href="/JGrndn/cwLayoutConfigEditor/commit/c54556f59812dff3590a671254cb00938bea12f5" class="message" data-pjax="true" title="new package">new package</a>
             </span>
           </td>
           <td class="age">
-            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-06T21:52:46Z">Feb 6, 2018</time-ago></span>
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-08T13:16:34Z">Feb 8, 2018</time-ago></span>
           </td>
         </tr>
         <tr class="js-navigation-item">
@@ -620,15 +620,15 @@
             <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/tree/master/src" class="js-navigation-open" id="25d902c24283ab8cfbac54dfa101ad31-b1b1828991b30a07768edb4056e850dff5a74b52" title="src">src</a></span>
+            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/tree/master/src" class="js-navigation-open" id="25d902c24283ab8cfbac54dfa101ad31-1de23953d8cb8d886a0b6f227e1437ff56ff8f32" title="src">src</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
-                  <a href="/JGrndn/cwLayoutConfigEditor/commit/bfa513b692a889341e83930f13be20d6db1bb9b2" class="message" data-pjax="true" title="Calculation engine - add calculation with indep list">Calculation engine - add calculation with indep list</a>
+                  <a href="/JGrndn/cwLayoutConfigEditor/commit/2f1fda5f422534488faefaef8bf34c7233724ce5" class="message" data-pjax="true" title="Change UI for calculation on indep list">Change UI for calculation on indep list</a>
             </span>
           </td>
           <td class="age">
-            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-08T13:14:47Z">Feb 8, 2018</time-ago></span>
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-08T16:17:17Z">Feb 8, 2018</time-ago></span>
           </td>
         </tr>
         <tr class="js-navigation-item">
@@ -672,15 +672,15 @@
             <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/blob/master/Help_cpm.pdf" class="js-navigation-open" id="92c255513ca20c696842c69d24babf82-bd111487886e903d3bddc05601cc11f41a72ee92" title="Help_cpm.pdf">Help_cpm.pdf</a></span>
+            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/blob/master/Help_cpm.pdf" class="js-navigation-open" id="92c255513ca20c696842c69d24babf82-5d608fffbe175b9cd016bb1376200b85a07a0ad0" title="Help_cpm.pdf">Help_cpm.pdf</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
-                  <a href="/JGrndn/cwLayoutConfigEditor/commit/69b256680ee9b55b864f3fd18da95b504056069d" class="message" data-pjax="true" title="new package">new package</a>
+                  <a href="/JGrndn/cwLayoutConfigEditor/commit/c54556f59812dff3590a671254cb00938bea12f5" class="message" data-pjax="true" title="new package">new package</a>
             </span>
           </td>
           <td class="age">
-            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-06T21:52:46Z">Feb 6, 2018</time-ago></span>
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-08T13:16:34Z">Feb 8, 2018</time-ago></span>
           </td>
         </tr>
         <tr class="js-navigation-item">
@@ -689,15 +689,15 @@
             <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/blob/master/Help_layout.md" class="js-navigation-open" id="6bc7a3548386fb31e3de9a56bb43025d-ffbb1c72967ebb5d57758f1a14d10e3a47f12aba" title="Help_layout.md">Help_layout.md</a></span>
+            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/blob/master/Help_layout.md" class="js-navigation-open" id="6bc7a3548386fb31e3de9a56bb43025d-637152a970e0fe1bfd9aa65133c017ef098af04c" title="Help_layout.md">Help_layout.md</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
-                  <a href="/JGrndn/cwLayoutConfigEditor/commit/69b256680ee9b55b864f3fd18da95b504056069d" class="message" data-pjax="true" title="new package">new package</a>
+                  <a href="/JGrndn/cwLayoutConfigEditor/commit/c54556f59812dff3590a671254cb00938bea12f5" class="message" data-pjax="true" title="new package">new package</a>
             </span>
           </td>
           <td class="age">
-            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-06T21:52:46Z">Feb 6, 2018</time-ago></span>
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-08T13:16:34Z">Feb 8, 2018</time-ago></span>
           </td>
         </tr>
         <tr class="js-navigation-item">
@@ -706,15 +706,15 @@
             <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/blob/master/Help_layout.pdf" class="js-navigation-open" id="72e5570e9367cd7e0efbc2fdb0f92e8f-49e89e8588ee16497cbc381ab8e006ccba8bb2cd" title="Help_layout.pdf">Help_layout.pdf</a></span>
+            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/blob/master/Help_layout.pdf" class="js-navigation-open" id="72e5570e9367cd7e0efbc2fdb0f92e8f-d37505002e7bf76b0e9ec4f1c4c581f5c257178f" title="Help_layout.pdf">Help_layout.pdf</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
-                  <a href="/JGrndn/cwLayoutConfigEditor/commit/69b256680ee9b55b864f3fd18da95b504056069d" class="message" data-pjax="true" title="new package">new package</a>
+                  <a href="/JGrndn/cwLayoutConfigEditor/commit/c54556f59812dff3590a671254cb00938bea12f5" class="message" data-pjax="true" title="new package">new package</a>
             </span>
           </td>
           <td class="age">
-            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-06T21:52:46Z">Feb 6, 2018</time-ago></span>
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-08T13:16:34Z">Feb 8, 2018</time-ago></span>
           </td>
         </tr>
         <tr class="js-navigation-item">
@@ -723,15 +723,15 @@
             <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
           </td>
           <td class="content">
-            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/blob/master/package.json" class="js-navigation-open" id="b9cfc7f2cdf78a7f4b91a753d10865a2-1aba97495e1b6c3b64962f5f37b9fa30ed52e8c3" title="package.json">package.json</a></span>
+            <span class="css-truncate css-truncate-target"><a href="/JGrndn/cwLayoutConfigEditor/blob/master/package.json" class="js-navigation-open" id="b9cfc7f2cdf78a7f4b91a753d10865a2-068c3ccf449ec8d336304d989e0aab0692df5501" title="package.json">package.json</a></span>
           </td>
           <td class="message">
             <span class="css-truncate css-truncate-target">
-                  <a href="/JGrndn/cwLayoutConfigEditor/commit/215d08ebdab6bc19311378f4ae80b13136d5de59" class="message" data-pjax="true" title="1.0.1">1.0.1</a>
+                  <a href="/JGrndn/cwLayoutConfigEditor/commit/5dfd064724a415ad0ea72494a67f950aa8d1a6b3" class="message" data-pjax="true" title="1.1.0">1.1.0</a>
             </span>
           </td>
           <td class="age">
-            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-06T21:52:01Z">Feb 6, 2018</time-ago></span>
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-02-08T13:15:53Z">Feb 8, 2018</time-ago></span>
           </td>
         </tr>
     </tbody>
@@ -757,7 +757,7 @@
 <div class="footer container-lg px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between py-6 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2018 <span title="0.31006s from unicorn-1195943103-rbj7n">GitHub</span>, Inc.</li>
+      <li class="mr-3">&copy; 2018 <span title="0.30258s from unicorn-2427886145-rddh6">GitHub</span>, Inc.</li>
         <li class="mr-3"><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li class="mr-3"><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li class="mr-3"><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
