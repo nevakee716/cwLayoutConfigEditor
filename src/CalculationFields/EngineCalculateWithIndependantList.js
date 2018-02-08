@@ -90,6 +90,12 @@
   };
 
   cwEngine.prototype.run = function($scope){
+    var that = this;
+    $scope.resetPropertyIdentifier = function(){
+      that.ResultObjectType.IdentifierProperty = {};
+      this.ResultObjectType.IdentifierPropertyValue = null;
+    };
+
     $scope.getPropertyDataType = function(ot, ptScriptName){
       if (cwApi.isUndefined(ot.scriptName)){
         return '';
