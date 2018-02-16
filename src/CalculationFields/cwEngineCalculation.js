@@ -85,8 +85,8 @@
     $scope.templateByTypeOfOperation = {
       'CalculateOnSelf': that.getTemplatePath('CalculationFields', 'Template_CalculateOnSelf'),
       'CalculateWithList': that.getTemplatePath('CalculationFields', 'Template_CalculateWithList'),
-      'CalculateWithIndependantList': that.getTemplatePath('CalculationFields', 'Template_CalculateWithIndependantList'),/*
-      'Update': that.getTemplatePath('CalculationFields', 'Template_Update')*/
+      'CalculateWithIndependantList': that.getTemplatePath('CalculationFields', 'Template_CalculateWithIndependantList'),
+      'CalculateUpdate': that.getTemplatePath('CalculationFields', 'Template_CalculateUpdate')
     };
 
     $scope.enumOperations = ['sum', 'mult', 'average', 'min', 'max', 'and', 'or', 'count'];

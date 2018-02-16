@@ -1,0 +1,9 @@
+.cwLayoutConfigEditor div.save-config {
+  float: right;
+}
+.cwLayoutConfigEditor div.save-config .btn-save {
+  margin: 5px 0px;
+}
+.cwLayoutConfigEditor div.operations-wrapper {
+  clear: both;
+}
