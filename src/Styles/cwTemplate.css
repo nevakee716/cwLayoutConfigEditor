@@ -1,0 +1,163 @@
+.cwLayoutConfigEditor {
+  /* Style the tab content */
+}
+.cwLayoutConfigEditor .tabs {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* Style the buttons inside the tab */
+  /* Change background color of buttons on hover */
+  /* Create an active/current tablink class */
+}
+.cwLayoutConfigEditor .tabs .tab-link {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.cwLayoutConfigEditor .tabs .tab-link:hover {
+  background-color: #d8d8d8;
+}
+.cwLayoutConfigEditor .tabs .tab-link.active {
+  background-color: #ccc;
+}
+.cwLayoutConfigEditor .tabs .add-tab-link {
+  float: right;
+  padding: 6px;
+}
+.cwLayoutConfigEditor .tabContent {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.cwLayoutConfigEditor .tabContent .remove-operation {
+  float: right;
+}
+.cwLayoutConfigEditor div.row {
+  display: block;
+  margin: 5px 0px;
+}
+.cwLayoutConfigEditor div.row div.row-cell {
+  display: inline-block;
+}
+.cwLayoutConfigEditor div.row div.row-cell-label {
+  width: 100px;
+  vertical-align: top;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value-textarea {
+  width: 80%;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value select,
+.cwLayoutConfigEditor div.row div.row-cell-value input,
+.cwLayoutConfigEditor div.row div.row-cell-value textarea {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border: 1px solid #cccccc;
+  padding: 0px 5px;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value select,
+.cwLayoutConfigEditor div.row div.row-cell-value input {
+  height: 30px;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value textarea {
+  min-height: 30px;
+  resize: vertical;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width {
+  width: 85%;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.cell-content-wrapper {
+  width: 100%;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0px 5px;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.properties-wrapper {
+  overflow: auto;
+  max-height: 350px;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.properties-wrapper input {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.filter-wrapper div.filter-cell {
+  display: inline-block;
+  margin: 5px;
+  width: 180px;
+  text-align: center;
+  vertical-align: middle;
+  /*input[type="checkbox"]{
+                                margin: 0px;
+                            }*/
+}
+
+.cwLayoutConfigEditor .largeCell {
+  width: 500px;
+}
+
+
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.filter-content {
+  border-bottom: 1px solid #cccccc;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.header-cell {
+  text-align: center;
+  font-weight: bold;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter {
+  color: #78909C;
+  border-radius: 20px;
+  width: 36px;
+  height: 36px;
+  line-height: 34px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0px;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter i {
+  color: #78909C;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter:hover {
+  background-color: #00c9b6;
+  border-color: #546E7A;
+}
+.cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter:hover i {
+  color: white;
+}
+.cwLayoutConfigEditor div.row div.add-filter-button a.btn-add-filter {
+  height: auto;
+  width: auto;
+  margin: 5px;
+  color: white;
+}
+
+.cwLayoutConfigEditor div.propertieslist {
+        display: flex;
+        flex-wrap: wrap;
+}
+.cwLayoutConfigEditor a.selected{
+  background-color: #00c9b6;
+  border-color: #546E7A;
+}
+
+
+.cwLayoutConfigEditor div.add-first-operation-button a.btn-add-first-operation {
+  height: auto;
+  width: auto;
+  margin: 5px;
+  color: white;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}

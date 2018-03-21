@@ -1,4 +1,4 @@
-label_submit_configuration = Sauvegarder
+﻿label_submit_configuration = Sauvegarder
 label_add_operation = Ajouter une opération
 label_remove_operation = Supprimer l''opération
 ec_NewOperationLabel = Nouvelle opération
@@ -34,3 +34,20 @@ label_ot_result = Objet Type Résultat
 label_result_create_new = Créer une nouvelle instance
 label_result_pt_identifier = Propriété identifiant
 label_result_pt_idenfier_value = Valeur de la propriété identifiant
+
+label_alert_who = Qui reçoit
+label_alert_what = Qu'est ce qui active
+
+label_alert_who_favorite = Favoris
+label_alert_who_workflow = Workflow
+label_alert_what_modification = Modification
+
+label_alert_notification = Notification
+label_alert_mail = Courrier électronique
+label_alert_favGetAll = Etre notifié de tout si abonné à la configuration
+label_alert_timeDelay = Retard
+
+label_property_add = Ajouter une Propriété
+label_property_to_select = Propriétés
+label_association_add = Ajouter une association
+label_associations = Associations

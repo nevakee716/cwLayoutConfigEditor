@@ -34,3 +34,21 @@ label_ot_result = Result Object Type
 label_result_create_new = Create new object
 label_result_pt_identifier = Identifying property
 label_result_pt_idenfier_value = Identifying property value
+
+
+label_alert_who = Who is Alerted
+label_alert_what = What trigger the alert
+
+label_alert_who_favorite = Favorite
+label_alert_who_workflow = Workflow
+label_alert_what_modification = Modification
+
+label_alert_notification = Notification
+label_alert_mail = Mail
+label_alert_favGetAll = Being Notify to everything if following the configuration
+label_alert_timeDelay = Delay
+
+label_property_add = Add Property
+label_property_to_select = Properties
+label_association_add = Add Association
+label_associations = Associations
