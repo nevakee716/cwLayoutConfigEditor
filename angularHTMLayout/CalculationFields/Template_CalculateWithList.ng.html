@@ -35,7 +35,7 @@
 					<input ng-model="f.Value" type="number" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='number'">
 					<select ng-model="f.Value" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='lookup'" ng-options="x.id as x.name for x in op.engine.Node.SelectedObjectType.properties[f.ScriptName].lookups"></select>
 				</div>
-				<div class="remove-filter-button filter-cell"><a class="btn no-text page-action btn-remove-filter" ng-click="removeFilter($event, op.engine.Node.Filters, $index)"><i class="fa fa-times" aria-hidden="true"></i></a></div>
+				<div class="remove-filter-button filter-cell"><a class="btn no-text page-action btn-remove-filter" ng-click="removeFilter($event, $index, op.engine.Node.Filters)"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			</div>
 			<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-click="addFilter($event, op.engine.Node.Filters)">{{$root.i18n('label_pt_filter_add_new')}}</a></div>
 		</div>
@@ -79,7 +79,7 @@
 					<input ng-model="f.Value" type="number" ng-if="getPropertyDataType(op.engine.Node.ChildNode.TargetObjectType, f.ScriptName)==='number'">
 					<select ng-model="f.Value" ng-if="getPropertyDataType(op.engine.Node.ChildNode.TargetObjectType, f.ScriptName)==='lookup'" ng-options="x.id as x.name for x in op.engine.Node.ChildNode.TargetObjectType.properties[f.ScriptName].lookups"></select>
 				</div>
-				<div class="remove-filter-button filter-cell"><a class="btn no-text page-action btn-remove-filter" ng-click="removeFilter($event, op.engine.Node.ChildNode.Filters, $index)"><i class="fa fa-times" aria-hidden="true"></i></a></div>
+				<div class="remove-filter-button filter-cell"><a class="btn no-text page-action btn-remove-filter" ng-click="removeFilter($event, $index, op.engine.Node.ChildNode.Filters)"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			</div>
 			<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-click="addFilter($event, op.engine.Node.ChildNode.Filters)">{{$root.i18n('label_pt_filter_add_new')}}</a></div>
 		</div>
