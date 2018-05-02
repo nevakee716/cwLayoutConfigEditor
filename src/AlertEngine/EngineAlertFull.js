@@ -30,7 +30,7 @@
 
  cwEngine.prototype.loadConfiguration = function(config) {
     var i, f, self = this;
-    if(!cwApi.isUndefined(config)){
+    if(!cwApi.isUndefined(config) && config.node){
 
       this.what = config.what;
       this.who = config.who;
