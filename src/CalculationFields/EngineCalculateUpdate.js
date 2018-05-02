@@ -64,43 +64,6 @@
 
   cwEngine.prototype.run = function($scope){
     var that = this;
-    $scope.getPropertyDataType = function(ptScriptName){
-      if (cwApi.isUndefined(that.Node.SelectedObjectType)){
-        return '';
-      }
-      var p = cwApi.mm.getProperty(that.Node.SelectedObjectType.scriptName, ptScriptName);
-      if (cwApi.isUndefined(p)){
-        return '';
-      }
-      switch(p.type){
-        case 'Boolean':
-          return 'checkbox';
-        /*case 'Date':
-          return 'date';*/
-        case 'Integer':
-        case 'Double':
-          return 'number';
-        case 'Lookup':
-          return 'lookup';
-        default:
-          return 'text';
-      }
-    };
-
-    $scope.addFilter = function(evt){
-      evt.preventDefault();
-      that.Node.Filters.push({});
-    };
-
-    $scope.removeFilter = function(evt, index){
-      evt.preventDefault();
-      that.Node.Filters.splice(index, 1);
-    };
-
-    $scope.resetFilter = function(filter){
-      filter.Operator = '';
-      filter.Value = '';
-    };
 
     $scope.addValue = function(evt){
       evt.preventDefault();

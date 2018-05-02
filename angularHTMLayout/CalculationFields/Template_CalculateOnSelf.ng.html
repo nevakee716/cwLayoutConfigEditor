@@ -44,18 +44,18 @@
 					<select ng-model="f.ScriptName" ng-options="x.scriptName as x.name for x in op.engine.Node.SelectedObjectType.propertiesArray | orderBy:'name'" ng-change="resetFilter(f)"></select>
 				</div>
 				<div class="filter-operator filter-cell">
-					<select ng-model="f.Operator" ng-if="getPropertyDataType(f.ScriptName) !== ''" ng-options="x for x in FilterOperators"></select>
+					<select ng-model="f.Operator" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName) !== ''" ng-options="x for x in FilterOperators"></select>
 				</div>
 				<div class="filter-value filter-cell">
-					<input ng-model="f.Value" ng-if="getPropertyDataType(f.ScriptName)==='text'">
-					<input ng-model="f.Value" type="checkbox" ng-if="getPropertyDataType(f.ScriptName)==='checkbox'">
-					<input ng-model="f.Value" type="date" ng-if="getPropertyDataType(f.ScriptName)==='date'">
-					<input ng-model="f.Value" type="number" ng-if="getPropertyDataType(f.ScriptName)==='number'">
-					<select ng-model="f.Value" ng-if="getPropertyDataType(f.ScriptName)==='lookup'" ng-options="x.id as x.name for x in op.engine.Node.SelectedObjectType.properties[f.ScriptName].lookups"></select>
+					<input ng-model="f.Value" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='text'">
+					<input ng-model="f.Value" type="checkbox" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='checkbox'">
+					<input ng-model="f.Value" type="date" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='date'">
+					<input ng-model="f.Value" type="number" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='number'">
+					<select ng-model="f.Value" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='lookup'" ng-options="x.id as x.name for x in op.engine.Node.SelectedObjectType.properties[f.ScriptName].lookups"></select>
 				</div>
-				<div class="remove-filter-button filter-cell"><a class="btn no-text page-action btn-remove-filter" ng-click="removeFilter($event, $index)"><i class="fa fa-times" aria-hidden="true"></i></a></div>
+				<div class="remove-filter-button filter-cell"><a class="btn no-text page-action btn-remove-filter" ng-click="removeFilter($event, $index, op.engine.Node.Filters)"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			</div>
-			<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-click="addFilter($event)">{{$root.i18n('label_pt_filter_add_new')}}</a></div>
+			<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-click="addFilter($event, op.engine.Node.Filters)">{{$root.i18n('label_pt_filter_add_new')}}</a></div>
 		</div>
 	</div>
 </div>

@@ -96,43 +96,6 @@
       this.ResultObjectType.IdentifierPropertyValue = null;
     };
 
-    $scope.getPropertyDataType = function(ot, ptScriptName){
-      if (cwApi.isUndefined(ot.scriptName)){
-        return '';
-      }
-      var p = cwApi.mm.getProperty(ot.scriptName, ptScriptName);
-      if (cwApi.isUndefined(p)){
-        return '';
-      }
-      switch(p.type){
-        case 'Boolean':
-          return 'checkbox';
-        case 'Date':
-          return 'date';
-        case 'Integer':
-        case 'Double':
-          return 'number';
-        case 'Lookup':
-          return 'lookup';
-        default:
-          return 'text';
-      }
-    };
-
-    $scope.addFilter = function(evt, filters){
-      evt.preventDefault();
-      filters.push({});
-    };
-
-    $scope.removeFilter = function(evt, index, filters){
-      evt.preventDefault();
-      filters.splice(index, 1);
-    };
-
-    $scope.resetFilter = function(filter){
-      filter.Operator = '';
-      filter.Value = '';
-    };
   };
 
   if (cwApi.isUndefined(cwApi.cwLayoutsEngine)) {
