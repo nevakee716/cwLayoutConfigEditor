@@ -48,11 +48,11 @@
 					<select ng-model="v.ScriptName" ng-options="x.scriptName as x.name for x in op.engine.Node.SelectedObjectType.propertiesArray | orderBy:'name'" ng-change="resetValue(v)"></select>
 				</div>
 				<div class="filter-value filter-cell">
-					<input ng-model="v.Value" ng-if="getPropertyDataType(v.ScriptName)==='text'">
-					<input ng-model="v.Value" type="checkbox" ng-if="getPropertyDataType(v.ScriptName)==='checkbox'">
-					<input ng-model="v.Value" type="date" ng-if="getPropertyDataType(v.ScriptName)==='date'">
-					<input ng-model="v.Value" type="number" ng-if="getPropertyDataType(v.ScriptName)==='number'">
-					<select ng-model="v.Value" ng-if="getPropertyDataType(v.ScriptName)==='lookup'" ng-options="x.id as x.name for x in op.engine.Node.SelectedObjectType.properties[v.ScriptName].lookups"></select>
+					<input ng-model="v.Value" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, v.ScriptName)==='text'">
+					<input ng-model="v.Value" type="checkbox" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, v.ScriptName)==='checkbox'">
+					<input ng-model="v.Value" type="date" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, v.ScriptName)==='date'">
+					<input ng-model="v.Value" type="number" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, v.ScriptName)==='number'">
+					<select ng-model="v.Value" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, v.ScriptName)==='lookup'" ng-options="x.id as x.name for x in op.engine.Node.SelectedObjectType.properties[v.ScriptName].lookups"></select>
 				</div>
 				<div class="remove-filter-button filter-cell"><a class="btn no-text page-action btn-remove-filter" ng-click="removeValue($event, $index)"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			</div>
