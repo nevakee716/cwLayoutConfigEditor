@@ -1,0 +1,6 @@
+{
+    "evolve-version": "4.0",
+    "dependencies": {
+        "customDisplayStringEnhanced": "^0.0.1"
+    }
+}
