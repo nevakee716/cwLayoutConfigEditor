@@ -93,7 +93,7 @@
     var that = this;
     $scope.resetPropertyIdentifier = function(){
       that.ResultObjectType.IdentifierProperty = {};
-      this.ResultObjectType.IdentifierPropertyValue = null;
+      that.ResultObjectType.IdentifierPropertyValue = null;
     };
 
   };
