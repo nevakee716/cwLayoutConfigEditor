@@ -38,7 +38,13 @@
         that.ResultObjectType.IdentifierProperty = that.ResultObjectType.properties[config.IdentifierPropertyScriptName];
         that.ResultObjectType.IdentifierPropertyValue = config.IdentifierPropertyValue;
 
-        that.DefaultValues = config.DefaultValues;
+        if (config.DefaultValues){
+          for(var v in config.DefaultValues){
+            if (config.DefaultValues.hasOwnProperty(v)){
+              that.NewValues.push({ScriptName: v, Value: config.DefaultValues[v]});
+            }
+          }
+        }
       }
     }
   };
@@ -54,7 +60,7 @@
     this.ResultObjectType.IdentifierProperty = {};
     this.ResultObjectType.IdentifierPropertyValue = null;
     this.CreateNewItem = false;
-    this.DefaultValues = {};
+    this.NewValues = [];
 
     getAllAvailableObjectType(this);
     loadConfiguration(this, config);
@@ -86,7 +92,10 @@
       json.IdentifierPropertyScriptName = this.ResultObjectType.IdentifierProperty.scriptName;
       json.IdentifierPropertyValue = this.ResultObjectType.IdentifierPropertyValue;
     }
-    json.DefaultValues = this.DefaultValues;  
+    json.DefaultValues = {};
+    for(i=0; i<this.NewValues.length; i+=1){
+      json.DefaultValues[this.NewValues[i].ScriptName] = this.NewValues[i].Value;
+    }
   };
 
   cwEngine.prototype.run = function($scope){
@@ -94,6 +103,9 @@
     $scope.resetPropertyIdentifier = function(){
       that.ResultObjectType.IdentifierProperty = {};
       that.ResultObjectType.IdentifierPropertyValue = null;
+      if (that.CreateNewItem === false){
+        that.NewValues = [];
+      }
     };
 
   };

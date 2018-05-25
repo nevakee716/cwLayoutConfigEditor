@@ -166,13 +166,13 @@
       switch(p.type){
         case 'Boolean':
           return 'checkbox';
-        case 'Date':
-          return 'date';
         case 'Integer':
         case 'Double':
           return 'number';
         case 'Lookup':
           return 'lookup';
+        case 'Date':
+          //return 'date';
         default:
           return 'text';
       }
