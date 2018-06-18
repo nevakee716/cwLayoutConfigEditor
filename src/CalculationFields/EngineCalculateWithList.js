@@ -101,7 +101,7 @@
     };
     // operand
     if (this.OperandOnIntersection){
-      json.OperandPropertyScriptName = this.Node.ChildNode.IntersectionNode.ObjectType.OperandPropertyScriptName.toLowerCase();
+      json.OperandPropertyScriptName = (this.Node.ChildNode.TargetObjectType.Operand) ? this.Node.ChildNode.TargetObjectType.Operand.scriptName.toLowerCase() : 'id';
       aNode.IntersectionProperties.push(json.OperandPropertyScriptName);
     } else {
       json.OperandPropertyScriptName = this.Node.ChildNode.TargetObjectType.Operand.scriptName.toLowerCase();

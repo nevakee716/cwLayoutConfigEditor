@@ -12,7 +12,7 @@
 	</div>
 </div>
 
-<div ng-if="op.engine.Node.SelectedObjectType.scriptName" class="row bootstrap-iso">
+<div ng-if="op.engine.Node.SelectedObjectType.scriptName && op.engine.Operator !== 'count'" class="row bootstrap-iso">
 	<div class="row-cell row-cell-label">{{$root.i18n('label_pt_operand')}} : </div>
 	<div class="row-cell row-cell-value">
 		<select ng-model="op.engine.Node.SelectedObjectType.Operand" ng-options="p as p.name for p in op.engine.Node.SelectedObjectType.propertiesArray | orderBy:'name'"></select>

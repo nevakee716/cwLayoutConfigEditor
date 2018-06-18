@@ -94,7 +94,7 @@
     }
 
     // operand
-    json.OperandPropertyScriptName = this.Node.SelectedObjectType.Operand.scriptName;
+    json.OperandPropertyScriptName = (this.Node.SelectedObjectType.Operand) ? this.Node.SelectedObjectType.Operand.scriptName : 'id';
     json.ResultObjectTypeScriptName = this.ResultObjectType.scriptName;
     json.CreateOptions = {
       Create: this.CreateNewItem
