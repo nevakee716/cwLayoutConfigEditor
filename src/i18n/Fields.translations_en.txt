@@ -53,3 +53,7 @@ label_property_add = Add Property
 label_property_to_select = Properties
 label_association_add = Add Association
 label_associations = Associations
+
+label_pt_new_associations = Link to object
+label_pt_new_association_scriptname = Association scriptname
+label_pt_new_association_target_id = Id of target object
