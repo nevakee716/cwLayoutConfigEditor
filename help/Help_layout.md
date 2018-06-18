@@ -18,7 +18,7 @@ As layout are dynamically loaded according to the configuration category, you ne
 
 <img src="https://github.com/JGrndn/cwLayoutConfigEditor/blob/master/screen/1.JPG" style="width:95%" />  
 
-_Please make sure to select the Category property in the Edit page._  
+_Please make sure to select the Category and configuration property in the Edit page._  
 
 Once the configuration is set up, deploy your website (don't forget to deploy themes too !)  
 
