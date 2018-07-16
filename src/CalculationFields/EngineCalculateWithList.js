@@ -79,7 +79,6 @@
 		this.Node.ChildNode.IntersectionNode.Filters = [];
 		this.Node.ChildNode.IntersectionNode.ObjectType = {};
 		this.OperandOnIntersection = false;
-
 		getAllAvailableObjectType(this);
 		loadConfiguration(this, config);
 	};
