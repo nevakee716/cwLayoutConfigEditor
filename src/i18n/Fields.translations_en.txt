@@ -1,5 +1,6 @@
 label_submit_configuration = Save
 label_add_operation = Add operation
+label_duplicate_operation = Duplicate Operation
 label_remove_operation = Delete operation
 ec_NewOperationLabel = New operation
 label_name = Name
