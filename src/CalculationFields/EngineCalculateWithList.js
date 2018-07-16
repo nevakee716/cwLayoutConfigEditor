@@ -44,14 +44,16 @@
           // filters
           for(i=0; i<config.CwLightNodeObjectType.AssociationTypeNodes[0].Filters.length; i+=1){
             f = config.CwLightNodeObjectType.AssociationTypeNodes[0].Filters[i];
-            that.Node.Filters.push({ScriptName: f.ScriptName, Operator:f.Operator, Value: f.Value});
+            that.Node.ChildNode.Filters.push({ScriptName: f.ScriptName, Operator:f.Operator, Value: f.Value});
           }
           // properties
-          if (that.OperandOnIntersection){
-            that.Node.ChildNode.IntersectionNode.ObjectType.OperandPropertyScriptName = config.OperandPropertyScriptName.toLowerCase();
-          } else {
-            that.Node.ChildNode.TargetObjectType.Operand = that.Node.ChildNode.TargetObjectType.properties[config.OperandPropertyScriptName.toLowerCase()];
-          }
+			if(config.Operation !== 'count') {
+			  if (that.OperandOnIntersection){
+			    that.Node.ChildNode.IntersectionNode.ObjectType.OperandPropertyScriptName = config.OperandPropertyScriptName.toLowerCase();
+			  } else {
+			    that.Node.ChildNode.TargetObjectType.Operand = that.Node.ChildNode.TargetObjectType.properties[config.OperandPropertyScriptName.toLowerCase()];
+			  }
+			}
         }
       }
     }
@@ -100,21 +102,28 @@
       IntersectionFilters : []
     };
     // operand
-    if (this.OperandOnIntersection){
-      json.OperandPropertyScriptName = (this.Node.ChildNode.TargetObjectType.Operand) ? this.Node.ChildNode.TargetObjectType.Operand.scriptName.toLowerCase() : 'id';
-      aNode.IntersectionProperties.push(json.OperandPropertyScriptName);
-    } else {
-      json.OperandPropertyScriptName = this.Node.ChildNode.TargetObjectType.Operand.scriptName.toLowerCase();
-      aNode.Properties.push(json.OperandPropertyScriptName);
+    if(json.Operation !== 'count') {
+		if (this.OperandOnIntersection){
+	      json.OperandPropertyScriptName = (this.Node.ChildNode.TargetObjectType.Operand) ? this.Node.ChildNode.TargetObjectType.Operand.scriptName.toLowerCase() : 'id';
+	      aNode.IntersectionProperties.push(json.OperandPropertyScriptName);
+	    } else {
+	      json.OperandPropertyScriptName = this.Node.ChildNode.TargetObjectType.Operand.scriptName.toLowerCase();
+	      aNode.Properties.push(json.OperandPropertyScriptName);
+	    }
     }
-    for(i=0; i<this.Node.ChildNode.Filters; i+=1){
-      f = this.Node.ChildNode.Filters[i];
-      aNode.Filters.push({ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value});
-    }
-    for(i=0; i<this.Node.ChildNode.IntersectionNodeFilters; i+=1){
-      f = this.Node.ChildNode.IntersectionNodeFilters.Filters[i];
-      aNode.IntersectionFilters.push({ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value});
-    }
+    
+    if(this.Node.ChildNode.Filters) {
+	    for(i=0; i<this.Node.ChildNode.Filters.length; i+=1){
+	      f = this.Node.ChildNode.Filters[i];
+	      aNode.Filters.push({ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value});
+	    }    	
+    } 
+    if(this.Node.ChildNode.IntersectionNodeFilters) {
+	    for(i=0; i<this.Node.ChildNode.IntersectionNodeFilters.length; i+=1){
+	      f = this.Node.ChildNode.IntersectionNodeFilters.Filters[i];
+	      aNode.IntersectionFilters.push({ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value});
+	    }
+	}
     json.CwLightNodeObjectType.AssociationTypeNodes = [aNode];
   };
 
