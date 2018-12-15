@@ -3,21 +3,22 @@
 (function(cwApi, $) {
   "use strict";
 
-  var cwEngineCalculation = function(object, loader) {
-    cwApi.extend(this, cwApi.cwLayoutsEngine.cwLayoutConfigEditorEngine, object, loader);
+  var cwEngineCalculation = function(object, loader, options) {
+    cwApi.extend(this, cwApi.cwLayoutsEngine.cwLayoutConfigEditorEngine, object, loader, options);
   };
 
   cwEngineCalculation.prototype.getOperationTemplatePath = function() {
     return this.getTemplatePath('CalculationFields', 'cwTemplateCalculationFields');
   };
 
-  cwEngineCalculation.prototype.init = function(config) {
+  cwEngineCalculation.prototype.init = function(config, options) {
     var i, o, c, operationsById = {}, allOperations = [];
-    if (!cwApi.isUndefined(config)){
-      for(i=0; i<config.length; i+=1){
-        c = config[i];
+    this.layoutOptions = options;
+    if (!cwApi.isUndefined(config) && !cwApi.isUndefined(config.Operations)){
+      for(i=0; i<config.Operations.length; i+=1){
+        c = config.Operations[i];
         o = { Id: c.Id, Label: c.Label, Order: c.Order, Description: c.Description, Type: c.Type};
-        o.engine = new cwApi.cwLayoutsEngine['cwEngineCalculation_' + c.Type](c);
+        o.engine = new cwApi.cwLayoutsEngine['cwEngineCalculation_' + c.Type](c, this.layoutOptions);
         if (i===0){
           o.selected = true;
         }
@@ -45,7 +46,7 @@
         res.push(json);
       }
     }
-    return res;
+    return {'Operations': res};
   };
 
   cwEngineCalculation.cloneObjectType = function(ot){
@@ -78,8 +79,6 @@
       }
     }
 
-    cwApi.tmp = $scope.Operations;
-
     $scope.FilterOperators = ['Equal','NotEqual','GreaterThan','LessThan','GreaterThanEqual','LessThanEqual'/*,'In'*/];
 
     $scope.templateByTypeOfOperation = {
@@ -89,7 +88,7 @@
       'CalculateUpdate': that.getTemplatePath('CalculationFields', 'Template_CalculateUpdate')
     };
 
-    $scope.enumOperations = ['sum', 'mult', 'average', 'min', 'max', 'and', 'or', 'count'];
+    $scope.enumOperations = ['sum', 'mult', 'average', 'min', 'max', 'and', 'or', 'count', 'concat'];
 
     function getRandomId(){
       var id = Math.random().toString().substring(2, 10);
@@ -151,7 +150,7 @@
     };
 
     $scope.updateOperationType = function(operation){
-      operation.engine = new cwApi.cwLayoutsEngine['cwEngineCalculation_' + operation.Type]();
+      operation.engine = new cwApi.cwLayoutsEngine['cwEngineCalculation_' + operation.Type](undefined, that.layoutOptions);
       operation.engine.run($scope);
     };
 
@@ -166,13 +165,13 @@
       switch(p.type){
         case 'Boolean':
           return 'checkbox';
-        case 'Date':
-          return 'date';
         case 'Integer':
         case 'Double':
           return 'number';
         case 'Lookup':
           return 'lookup';
+        case 'Date':
+          //return 'date';
         default:
           return 'text';
       }
