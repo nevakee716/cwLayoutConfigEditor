@@ -1,6 +1,5 @@
 label_submit_configuration = Save
 label_add_operation = Add operation
-label_duplicate_operation = Duplicate Operation
 label_remove_operation = Delete operation
 ec_NewOperationLabel = New operation
 label_name = Name
@@ -14,6 +13,8 @@ typeoperation_CalculateUpdate = Update an object
 label_operation_operator = Operator
 label_operation_operator_sum = Sum
 label_operation_operator_mult = Mult
+label_operation_operator_diff = Diff
+label_operation_operator_divide = Division
 label_operation_operator_average = Average
 label_operation_operator_min = Min
 label_operation_operator_max = Max
@@ -54,7 +55,3 @@ label_property_add = Add Property
 label_property_to_select = Properties
 label_association_add = Add Association
 label_associations = Associations
-
-label_pt_new_associations = Link to object
-label_pt_new_association_scriptname = Association scriptname
-label_pt_new_association_target_id = Id of target object

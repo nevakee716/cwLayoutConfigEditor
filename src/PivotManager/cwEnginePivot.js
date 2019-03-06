@@ -3,22 +3,21 @@
 (function(cwApi, $) {
   "use strict";
 
-  var cwEngineCalculation = function(object, loader, options) {
-    cwApi.extend(this, cwApi.cwLayoutsEngine.cwLayoutConfigEditorEngine, object, loader, options);
+  var cwEnginePivot = function(object, loader) {
+    cwApi.extend(this, cwApi.cwLayoutsEngine.cwLayoutConfigEditorEngine, object, loader);
   };
 
-  cwEngineCalculation.prototype.getOperationTemplatePath = function() {
-    return this.getTemplatePath('CalculationFields', 'cwTemplateCalculationFields');
+  cwEnginePivot.prototype.getOperationTemplatePath = function() {
+    return this.getTemplatePath('PivotManager', 'cwTemplatePivotManager');
   };
 
-  cwEngineCalculation.prototype.init = function(config, options) {
+  cwEnginePivot.prototype.init = function(config) {
     var i, o, c, operationsById = {}, allOperations = [];
-    this.layoutOptions = options;
-    if (!cwApi.isUndefined(config) && !cwApi.isUndefined(config.Operations)){
-      for(i=0; i<config.Operations.length; i+=1){
-        c = config.Operations[i];
+    if (!cwApi.isUndefined(config)){
+      for(i=0; i<config.length; i+=1){
+        c = config[i];
         o = { Id: c.Id, Label: c.Label, Order: c.Order, Description: c.Description, Type: c.Type};
-        o.engine = new cwApi.cwLayoutsEngine['cwEngineCalculation_' + c.Type](c, this.layoutOptions);
+        o.engine = new cwApi.cwLayoutsEngine['cwPivotManager'](c);
         if (i===0){
           o.selected = true;
         }
@@ -30,7 +29,7 @@
     this.Operations = allOperations;
   };
 
-  cwEngineCalculation.prototype.getConfigToSave = function($scope){
+  cwEnginePivot.prototype.getConfigToSave = function($scope){
     var i, json, o, res = [];
     $scope.Operations.sort(function(a, b){return a.Order - b.Order;});
     for (i = 0; i < $scope.Operations.length; i+=1) {
@@ -46,10 +45,10 @@
         res.push(json);
       }
     }
-    return {'OperationReference':'CalculationFields.Core.CalculationEngine,CalculationFields.dll', 'Operations': res};
+    return res;
   };
 
-  cwEngineCalculation.cloneObjectType = function(ot){
+  cwEnginePivot.cloneObjectType = function(ot){
     var ptScriptName, newOt = $.extend(true, {}, ot);
     newOt.propertiesArray = [];
     for(ptScriptName in newOt.properties){
@@ -60,14 +59,14 @@
     return newOt;
   };
 
-  cwEngineCalculation.prototype.isContentAvailable = function(){
+  cwEnginePivot.prototype.isContentAvailable = function(){
     if (this.Operations && this.Operations.length > 0){
       return true;
     }
     return false;
   };
 
-  cwEngineCalculation.prototype.run = function($scope, config) {
+  cwEnginePivot.prototype.run = function($scope, config) {
     /*jslint unparam:true*/
     var that = this, index = 0;
     $scope.Operations = this.Operations;
@@ -79,6 +78,8 @@
       }
     }
 
+    cwApi.tmp = $scope.Operations;
+
     $scope.FilterOperators = ['Equal','NotEqual','GreaterThan','LessThan','GreaterThanEqual','LessThanEqual'/*,'In'*/];
 
     $scope.templateByTypeOfOperation = {
@@ -88,7 +89,7 @@
       'CalculateUpdate': that.getTemplatePath('CalculationFields', 'Template_CalculateUpdate')
     };
 
-    $scope.enumOperations = ['sum', 'mult', 'average', 'min', 'max', 'and', 'or', 'count', 'concat', 'diff', 'divide'];
+    $scope.enumOperations = ['sum', 'mult', 'average', 'min', 'max', 'and', 'or', 'count'];
 
     function getRandomId(){
       var id = Math.random().toString().substring(2, 10);
@@ -150,7 +151,7 @@
     };
 
     $scope.updateOperationType = function(operation){
-      operation.engine = new cwApi.cwLayoutsEngine['cwEngineCalculation_' + operation.Type](undefined, that.layoutOptions);
+      operation.engine = new cwApi.cwLayoutsEngine['cwEnginePivot_' + operation.Type]();
       operation.engine.run($scope);
     };
 
@@ -165,13 +166,13 @@
       switch(p.type){
         case 'Boolean':
           return 'checkbox';
+        case 'Date':
+          return 'date';
         case 'Integer':
         case 'Double':
           return 'number';
         case 'Lookup':
           return 'lookup';
-        case 'Date':
-          //return 'date';
         default:
           return 'text';
       }
@@ -191,21 +192,11 @@
       filter.Operator = '';
       filter.Value = '';
     };
-
-    $scope.setSelectedPropertyOrder = function(evt, arr, item){
-      var selectedItems = arr.filter(p => p.isOperand).sort((a,b) => a.operandOrder - b.operandOrder);
-      item.operandOrder = selectedItems.length;
-      //if (!item.isOperand){
-        selectedItems.map((v, i) => {
-          v.operandOrder = i+1;
-        })
-      //}
-    };
   };
 
   if (cwApi.isUndefined(cwApi.cwLayoutsEngine)) {
     cwApi.cwLayoutsEngine = {};
   }
-  cwApi.cwLayoutsEngine.cwEngineCalculation = cwEngineCalculation;
+  cwApi.cwLayoutsEngine.cwEnginePivot = cwEnginePivot;
 
 }(cwAPI, jQuery));

@@ -1,4 +1,4 @@
 var cwConfigurationEditorMapping = {
-	"Calculation Engine" : "cwEngineCalculation",
+	"Calculation engine" : "cwEngineCalculation",
 	"Alert Engine" : "cwEngineAlert"
 };

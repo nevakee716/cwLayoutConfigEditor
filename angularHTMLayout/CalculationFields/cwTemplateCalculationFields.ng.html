@@ -3,10 +3,7 @@
 		<div ng-repeat="(i, op) in Operations | orderBy:'Order'" ng-class="{active: op.selected == true}" class="tab-link tab-{{op.Id}}" ng-click="displayOperation(op.Id)" data-id="{{op.Id}}">{{op.Label}}</div>
 		<div class="add-tab-link" >
 			<a class="btn-add-operation btn page-action no-text" title="{{$root.i18n('label_add_operation')}}" ng-click="addOperation($event)"><i class="fa fa-plus" aria-hidden="true"></i></a>
-		</div>
-		<div class="add-tab-link" >
-			<a class="btn-add-operation btn page-action no-text" title="{{$root.i18n('label_duplicate_operation')}}" ng-click="duplicateOperation($event)"><i class="fa fa-clone" aria-hidden="true"></i></a>
-		</div>
+			</div>
 	</div>
 	<div class="tabContent" ng-if="op.selected" ng-repeat="(i, op) in OperationsById" id="{{op.Id}}">
 		<!-- <div class="" > -->

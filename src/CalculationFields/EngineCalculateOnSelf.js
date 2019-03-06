@@ -16,15 +16,16 @@
   };
 
   loadConfiguration = function(that, config) {
-    var i;
+    var i, order = 0;
     if(!cwApi.isUndefined(config)){
       // load objects
       that.Node.SelectedObjectType = that.availableObjectTypes[config.CwLightNodeObjectType.ObjectTypeScriptName];
-      
       if (that.Node.SelectedObjectType && that.availableObjectTypes.hasOwnProperty(that.Node.SelectedObjectType.scriptName)){
         for(i=0; i<config.OperandPropertyScriptNames.length; i+=1){
           if (that.Node.SelectedObjectType.properties.hasOwnProperty(config.OperandPropertyScriptNames[i])){
             that.Node.SelectedObjectType.properties[config.OperandPropertyScriptNames[i]].isOperand = true;
+            that.Node.SelectedObjectType.properties[config.OperandPropertyScriptNames[i]].operandOrder = order;
+            order +=1;
           }
         }
         for(i=0; i<config.CwLightNodeObjectType.Filters.length; i+=1){
@@ -61,12 +62,20 @@
     json.ResultPropertyScriptName = this.Node.ResultProperty.scriptName;
     // operand
     json.OperandPropertyScriptNames = [];
+    var selectedProperties = [];
     for (p in this.Node.SelectedObjectType.properties){
       if (this.Node.SelectedObjectType.properties.hasOwnProperty(p)){
         if (this.Node.SelectedObjectType.properties[p].isOperand === true){
-          json.OperandPropertyScriptNames.push(this.Node.SelectedObjectType.properties[p].scriptName);
+          selectedProperties.push(this.Node.SelectedObjectType.properties[p]);
+          //json.OperandPropertyScriptNames.push(this.Node.SelectedObjectType.properties[p].scriptName);
         }
       }
+    }
+    selectedProperties.sort((a,b) => {
+      return a.operandOrder - b.operandOrder;
+    });
+    for(i=0; i<selectedProperties.length; i+=1){
+      json.OperandPropertyScriptNames.push(selectedProperties[i].scriptName);
     }
     // filters
     for(i=0; i<this.Node.Filters.length; i+=1){
