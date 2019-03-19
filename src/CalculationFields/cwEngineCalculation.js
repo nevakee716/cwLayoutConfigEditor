@@ -79,7 +79,7 @@
       }
     }
 
-    $scope.FilterOperators = ['Equal','NotEqual','GreaterThan','LessThan','GreaterThanEqual','LessThanEqual'/*,'In'*/];
+    $scope.FilterOperators = ['Equal','NotEqual','GreaterThan','LessThan','GreaterThanEqual','LessThanEqual','In'];
 
     $scope.templateByTypeOfOperation = {
       'CalculateOnSelf': that.getTemplatePath('CalculationFields', 'Template_CalculateOnSelf'),
@@ -165,7 +165,7 @@
       switch(p.type){
         case 'Boolean':
           return 'checkbox';
-        case 'Integer':
+        //case 'Integer':
         case 'Double':
           return 'number';
         case 'Lookup':
@@ -193,13 +193,22 @@
     };
 
     $scope.setSelectedPropertyOrder = function(evt, arr, item){
-      var selectedItems = arr.filter(p => p.isOperand).sort((a,b) => a.operandOrder - b.operandOrder);
+      var selectedItems = arr.filter(p => p.isOperand);
       item.operandOrder = selectedItems.length;
-      //if (!item.isOperand){
-        selectedItems.map((v, i) => {
-          v.operandOrder = i+1;
-        })
-      //}
+      selectedItems.sort((a,b) => a.operandOrder - b.operandOrder).map((v,i) => {
+        v.operandOrder = i;
+      });
+    };
+
+    $scope.setFilterValueInArray = function(evt, index, filter, lu){
+      if (!Array.isArray(filter.Value)){
+        filter.Value = [];
+      }
+      if (filter.Value.indexOf(lu.id) !== -1){
+        filter.Value.splice(index, 1);
+      } else {
+        filter.Value.push(lu.id);
+      }
     };
   };
 

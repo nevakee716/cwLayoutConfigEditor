@@ -24,7 +24,7 @@
 	<div class="row-cell row-cell-value property-list-checkbox row-cell-max-width">
 		<div class="cell-content-wrapper properties-wrapper">
 			<div ng-repeat="p in op.engine.Node.SelectedObjectType.propertiesArray | orderBy:'name'">
-			  <input type="checkbox" ng-model="p.isOperand" ng-click="setSelectedPropertyOrder($event, op.engine.Node.SelectedObjectType.propertiesArray, p)">{{p.name}} <span ng-if="p.isOperand && op.engine.Operator=='sub'">(order : {{p.operandOrder}})</span>
+			  <input type="checkbox" ng-model="p.isOperand" ng-click="setSelectedPropertyOrder($event, op.engine.Node.SelectedObjectType.propertiesArray, p)">{{p.name}} <span ng-if="p.isOperand && (op.engine.Operator=='diff' || op.engine.Operator=='divide')">(order : {{p.operandOrder}})</span>
 			</div>
 		</div>
 	</div>
@@ -51,7 +51,8 @@
 					<input ng-model="f.Value" type="checkbox" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='checkbox'">
 					<input ng-model="f.Value" type="date" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='date'">
 					<input ng-model="f.Value" type="number" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='number'">
-					<select ng-model="f.Value" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='lookup'" ng-options="x.id as x.name for x in op.engine.Node.SelectedObjectType.properties[f.ScriptName].lookups"></select>
+					<select ng-model="f.Value" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='lookup' && f.Operator != 'In'" ng-options="x.id as x.name for x in op.engine.Node.SelectedObjectType.properties[f.ScriptName].lookups"></select>
+					<select style="height:initial" multiple size="{{op.engine.Node.SelectedObjectType.properties[f.ScriptName].lookups.length}}" ng-model="f.Value" ng-if="getPropertyDataType(op.engine.Node.SelectedObjectType, f.ScriptName)==='lookup' && f.Operator == 'In'" ng-options="x.id as x.name for x in op.engine.Node.SelectedObjectType.properties[f.ScriptName].lookups"></select>
 				</div>
 				<div class="remove-filter-button filter-cell"><a class="btn no-text page-action btn-remove-filter" ng-click="removeFilter($event, $index, op.engine.Node.Filters)"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			</div>

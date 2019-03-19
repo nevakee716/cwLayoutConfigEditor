@@ -44,7 +44,7 @@
           // filters
           for(i=0; i<config.CwLightNodeObjectType.AssociationTypeNodes[0].Filters.length; i+=1){
             f = config.CwLightNodeObjectType.AssociationTypeNodes[0].Filters[i];
-            that.Node.Filters.push({ScriptName: f.ScriptName, Operator:f.Operator, Value: f.Value});
+            that.Node.ChildNode.Filters.push({ScriptName: f.ScriptName, Operator:f.Operator, Value: f.Value});
           }
           // properties
           if (that.OperandOnIntersection){
@@ -107,12 +107,12 @@
       json.OperandPropertyScriptName = this.Node.ChildNode.TargetObjectType.Operand.scriptName.toLowerCase();
       aNode.Properties.push(json.OperandPropertyScriptName);
     }
-    for(i=0; i<this.Node.ChildNode.Filters; i+=1){
+    for(i=0; i<this.Node.ChildNode.Filters.length; i+=1){
       f = this.Node.ChildNode.Filters[i];
       aNode.Filters.push({ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value});
     }
-    for(i=0; i<this.Node.ChildNode.IntersectionNodeFilters; i+=1){
-      f = this.Node.ChildNode.IntersectionNodeFilters.Filters[i];
+    for(i=0; i<this.Node.ChildNode.IntersectionNode.Filters.length; i+=1){
+      f = this.Node.ChildNode.IntersectionNode.Filters[i];
       aNode.IntersectionFilters.push({ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value});
     }
     json.CwLightNodeObjectType.AssociationTypeNodes = [aNode];
