@@ -193,9 +193,11 @@
     };
 
     $scope.setSelectedPropertyOrder = function(evt, arr, item){
-      var selectedItems = arr.filter(p => p.isOperand);
+      var selectedItems = arr.filter(function(p){return p.isOperand});
       item.operandOrder = selectedItems.length;
-      selectedItems.sort((a,b) => a.operandOrder - b.operandOrder).map((v,i) => {
+      selectedItems.sort(function(a,b){ 
+        return a.operandOrder - b.operandOrder;
+      }).map(function(v,i){
         v.operandOrder = i;
       });
     };
