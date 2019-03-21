@@ -1,7 +1,7 @@
 {
   "name": "cwLayoutConfigEditor",
   "description": "Allow you to create configurations for operation using a UI",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "main": "cwLayoutConfigEditor.js",
   "scripts": {
     "test": ""
