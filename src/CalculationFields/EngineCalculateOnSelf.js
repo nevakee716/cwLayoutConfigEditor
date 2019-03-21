@@ -71,7 +71,7 @@
         }
       }
     }
-    selectedProperties.sort((a,b) => {
+    selectedProperties.sort(function(a,b) {
       return a.operandOrder - b.operandOrder;
     });
     for(i=0; i<selectedProperties.length; i+=1){
