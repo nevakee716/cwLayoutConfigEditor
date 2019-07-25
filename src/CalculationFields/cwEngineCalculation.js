@@ -46,7 +46,7 @@
         res.push(json);
       }
     }
-    return {'OperationReference':'CalculationFields.Core.CalculationEngine,CalculationFields.dll', 'Operations': res};
+    return {'OperationReference':'CalculationFields.Core.CalculationEngine,CalculationFields.dll', '$type': 'CalculationFields.JSON.CalculationConfiguration, CalculationFields', 'Operations': res};
   };
 
   cwEngineCalculation.cloneObjectType = function(ot){

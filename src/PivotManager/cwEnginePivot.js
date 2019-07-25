@@ -45,7 +45,7 @@
         res.push(json);
       }
     }
-    return res;
+    return {'OperationReference':'ItemContextCreator.Core.ContextOperationManager, ItemContextManager', '$type': 'ItemContextCreator.Configuration.ContextManagerConfiguration, ItemContextCreator', 'Operations': res};
   };
 
   cwEnginePivot.cloneObjectType = function(ot){
