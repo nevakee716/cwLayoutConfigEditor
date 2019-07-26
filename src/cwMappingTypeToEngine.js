@@ -1,4 +1,5 @@
 var cwConfigurationEditorMapping = {
-	"Calculation engine" : "cwEngineCalculation",
-	"Alert Engine" : "cwEngineAlert"
+	"Calculation Engine" : "cwEngineCalculation",
+	"Alert Engine" : "cwEngineAlert",
+	"Context Engine" : "cwEnginePivot"
 };
