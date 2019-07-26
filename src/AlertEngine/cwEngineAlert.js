@@ -16,7 +16,9 @@
   };
 
   cwEngineAlert.prototype.getConfigToSave = function($scope){
-    var i, json = {}, o;
+    var i, json = {
+    	"$type":"AlertEngine.JSON.AlertConfiguration, AlertEngine"
+    }, o;
     if(this.engine){
       this.engine.GetConfigurationToSave(json);
       json.what = this.engine.what;
@@ -27,13 +29,10 @@
       json.workflowID = this.engine.workflowID;
       json.notificationObject = this.engine.notificationObject;
       json.publicAccess = window.location.origin + window.location.pathname;
-      json.MailTemplate = cwApi.cwLayoutsEngine.basicAlertTemplate.MailTemplate;
-      json.header = cwApi.cwLayoutsEngine.basicAlertTemplate.header;
-      json.CSS = cwApi.cwLayoutsEngine.basicAlertTemplate.CSS;
       json.favGetAll  = this.engine.favGetAll;
       json.delay  = this.engine.delay;
       json.delayValue  = this.engine.delayValue;
-
+      json.OperationReference = 'AlertEngine.Core.AlertCore,AlertEngine.dll';
     }
     return json;
   };
