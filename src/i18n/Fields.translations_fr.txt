@@ -55,3 +55,4 @@ label_property_add = Ajouter une Propriété
 label_property_to_select = Propriétés
 label_association_add = Ajouter une association
 label_associations = Associations
+label_pt_new_association = Association

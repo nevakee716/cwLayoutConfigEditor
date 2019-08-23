@@ -37,7 +37,7 @@
         that.ResultObjectType.ResultProperty = that.ResultObjectType.properties[config.ResultPropertyScriptName];
         that.ResultObjectType.IdentifierProperty = that.ResultObjectType.properties[config.IdentifierPropertyScriptName];
         that.ResultObjectType.IdentifierPropertyValue = config.IdentifierPropertyValue;
-
+        that.CreateOptions = config.CreateOptions;
         that.DefaultValues = config.DefaultValues;
       }
     }
@@ -53,7 +53,7 @@
     this.ResultObjectType.ResultProperty = {};
     this.ResultObjectType.IdentifierProperty = {};
     this.ResultObjectType.IdentifierPropertyValue = null;
-    this.CreateNewItem = false;
+    this.CreateNewItem = {}
     this.DefaultValues = {};
 
     getAllAvailableObjectType(this);
@@ -81,7 +81,7 @@
     // operand
     json.OperandPropertyScriptName = this.Node.SelectedObjectType.Operand.scriptName;
     json.ResultObjectTypeScriptName = this.ResultObjectType.scriptName;
-    json.CreateNew = this.CreateNewItem;
+    json.CreateOptions = this.CreateOptions;
     if (!cwApi.isUndefined(this.ResultObjectType.IdentifierProperty) && !cwApi.isUndefined(this.ResultObjectType.IdentifierProperty.scriptName)){
       json.IdentifierPropertyScriptName = this.ResultObjectType.IdentifierProperty.scriptName;
       json.IdentifierPropertyValue = this.ResultObjectType.IdentifierPropertyValue;
@@ -93,7 +93,18 @@
     var that = this;
     $scope.resetPropertyIdentifier = function(){
       that.ResultObjectType.IdentifierProperty = {};
-      this.ResultObjectType.IdentifierPropertyValue = null;
+      that.ResultObjectType.IdentifierPropertyValue = null;
+    };
+
+    $scope.getAssociatedProperties = function(s) {
+      var r;
+      that.ResultObjectType.AssociationTypes.forEach(function(a){
+        if(a.ScriptName === s) {
+          r = a.TargetObjectTypeScriptName;
+        }
+      });
+      return this.op.engine.availableObjectTypes[r.toLowerCase()].properties;
+
     };
 
   };
