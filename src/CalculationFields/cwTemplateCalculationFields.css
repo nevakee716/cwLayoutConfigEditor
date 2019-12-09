@@ -1,3 +1,29 @@
+/* GLOBAL */
+/* LOGIN */
+/* DIAGRAM */
+/* HOME PAGE */
+/* MENU LEFT */
+/* MAIN MENU */
+/* SUB MENU */
+/* PAGE TAB */
+/* DROPDOWN NOTIFICATIONS */
+/* SOCIAL */
+/* LIST BOX */
+/* PROPERTIES GROUP */
+/* BUTTONS */
+/* PAGE ACTIONS */
+/* ACCORDIONS */
+/* DISCUSSIONS */
+/* WORLD MAP */
+/* USER ZONE */
+/* POPUP */
+/* BADGES */
+/* TASKS & NOTIFICATIONS */
+/* GLOBAL SEARCH */
+/* TOP BAR */
+/* GRID */
+/* DIAGRAM TILE */
+/* MATRIX ADVANCED */
 .cwLayoutConfigEditor .calculation-fields-container {
   /* Style the tab content */
 }
@@ -109,7 +135,7 @@
   font-weight: bold;
 }
 .cwLayoutConfigEditor .calculation-fields-container .tabContent div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter {
-  color: #78909C;
+  color: #03a0ce;
   border-radius: 20px;
   width: 36px;
   height: 36px;
@@ -120,26 +146,26 @@
   padding: 0px;
 }
 .cwLayoutConfigEditor .calculation-fields-container .tabContent div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter i {
-  color: #78909C;
+  color: #03a0ce;
 }
 .cwLayoutConfigEditor .calculation-fields-container .tabContent div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter:hover {
-  background-color: #00c9b6;
-  border-color: #546E7A;
+  background-color: #03b4e7;
+  border-color: #546e7a;
 }
 .cwLayoutConfigEditor .calculation-fields-container .tabContent div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter:hover i {
-  color: white;
+  color: #03a0ce;
 }
 .cwLayoutConfigEditor .calculation-fields-container .tabContent div.row div.add-filter-button a.btn-add-filter {
   height: auto;
   width: auto;
   margin: 5px;
-  color: white;
+  color: #03a0ce;
 }
 .cwLayoutConfigEditor div.add-first-operation-button a.btn-add-first-operation {
   height: auto;
   width: auto;
   margin: 5px;
-  color: white;
+  color: #03a0ce;
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
