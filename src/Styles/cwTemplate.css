@@ -1,3 +1,4 @@
+/* CUSTOM VARIABLES */
 /* GLOBAL */
 /* LOGIN */
 /* DIAGRAM */
@@ -21,9 +22,9 @@
 /* TASKS & NOTIFICATIONS */
 /* GLOBAL SEARCH */
 /* TOP BAR */
-/* GRID */
 /* DIAGRAM TILE */
 /* MATRIX ADVANCED */
+/* DIAGRAM OVERLAY */
 .cwLayoutConfigEditor {
   /* Style the tab content */
 }
@@ -160,27 +161,33 @@
   border-color: #546e7a;
 }
 .cwLayoutConfigEditor div.row div.row-cell-value.row-cell-max-width div.remove-filter-button a.btn-remove-filter:hover i {
-  color: #03a0ce;
+  color: #ffffff;
 }
 .cwLayoutConfigEditor div.row div.add-filter-button a.btn-add-filter {
   height: auto;
   width: auto;
   margin: 5px;
-  color: #03a0ce;
+  color: #ffffff;
+  background-color: #03a0ce;
 }
 .cwLayoutConfigEditor div.propertieslist {
   display: flex;
   flex-wrap: wrap;
 }
+.cwLayoutConfigEditor a.unselected {
+  color: #ffffff !important;
+  background-color: #546e7a !important;
+}
 .cwLayoutConfigEditor a.selected {
-  background-color: #03b4e7;
-  border-color: #546e7a;
+  color: #ffffff;
+  background-color: #03a0ce;
 }
 .cwLayoutConfigEditor div.add-first-operation-button a.btn-add-first-operation {
   height: auto;
   width: auto;
   margin: 5px;
-  color: #03a0ce;
+  color: #ffffff;
+  background-color: #03a0ce;
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;

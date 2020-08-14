@@ -14,12 +14,12 @@
 
 
 <div class="row bootstrap-iso">
-	<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-class="(engine.favGetAll==true) ? ['selected'] : []" ng-click="toggle(engine,'favGetAll')">{{$root.i18n('label_alert_favGetAll')}}</a>
+	<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-class="(engine.favGetAll==true) ? ['selected'] : ['unselected']" ng-click="toggle(engine,'favGetAll')">{{$root.i18n('label_alert_favGetAll')}}</a>
 	</div>
 </div>
 
 <div class="row bootstrap-iso">
-	<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-class="(engine.delay==true) ? ['selected'] : []" ng-click="toggle(engine,'delay')">{{$root.i18n('label_alert_timeDelay')}}</a>
+	<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-class="(engine.delay==true) ? ['selected'] : ['unselected']" ng-click="toggle(engine,'delay')">{{$root.i18n('label_alert_timeDelay')}}</a>
 		<div ng-if="engine.delay==true" class="row-cell row-cell-value row-cell-max-width">
 			<input ng-model="engine.delayValue" class="largeCell"  type="text"></input>
 		</div>
@@ -27,7 +27,7 @@
 </div>
 
 <div class="row bootstrap-iso">
-	<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-class="(engine.notification==true) ? ['selected'] : []" ng-click="toggle(engine,'notification')">{{$root.i18n('label_alert_notification')}}</a>
+	<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-class="(engine.notification==true) ? ['selected'] : ['unselected']" ng-click="toggle(engine,'notification')">{{$root.i18n('label_alert_notification')}}</a>
 		<div ng-if="engine.notification==true" class="row-cell row-cell-value row-cell-max-width">
 			<input ng-model="engine.notificationObject" class="largeCell" type="text"></input>
 			<input ng-model="engine.workflowID" ng-init="initWorkflowId()" type="text"></input>
@@ -37,7 +37,7 @@
 
 
 <div class="row bootstrap-iso">
-	<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-class="(engine.mail==true) ? ['selected'] : []" ng-click="toggle(engine,'mail')">{{$root.i18n('label_alert_mail')}}</a>
+	<div class="add-filter-button"><a class="btn-add-filter btn page-action" ng-class="(engine.mail==true) ? ['selected'] : ['unselected']" ng-click="toggle(engine,'mail')">{{$root.i18n('label_alert_mail')}}</a>
 		<div ng-if="engine.mail==true" class="row-cell row-cell-value row-cell-max-width largeCell">
 			<input ng-model="engine.mailObject" class="largeCell"  type="text"></input>
 		</div>
@@ -85,7 +85,7 @@
 	<div class="row-cell row-cell-label">{{$root.i18n('label_property_to_select')}} : </div>
 	<div class="row-cell row-cell-value row-cell-max-width ">
 		<div class="cell-content-wrapper filter-wrapper propertieslist">
-			<div class="add-filter-button" ng-repeat="x in engine.Node.SelectedObjectType.propertiesArray | orderBy:'name'" ><a class="btn-add-filter btn page-action" ng-class="(engine.Node.propertiesToSelect[x.scriptName]==true) ? ['selected'] : []" ng-click="toggle(engine.Node.propertiesToSelect,x.scriptName)">{{x.name}}</a></div>
+			<div class="add-filter-button" ng-repeat="x in engine.Node.SelectedObjectType.propertiesArray | orderBy:'name'" ><a class="btn-add-filter btn page-action" ng-class="(engine.Node.propertiesToSelect[x.scriptName]==true) ? ['selected'] : ['unselected']" ng-click="toggle(engine.Node.propertiesToSelect,x.scriptName)">{{x.name}}</a></div>
 			</div>	
 		</div>
 	</div>
@@ -132,10 +132,10 @@
 						</div>
 					</div>
 
-					<div class="row-cell row-cell-label">{{$root.i18n('label_property_to_select')}} : </div>
-					<div class="row-cell row-cell-value row-cell-max-width ">
+					<div ng-if="false"  class="row-cell row-cell-label">{{$root.i18n('label_property_to_select')}} : </div>
+					<div ng-if="false"  class="row-cell row-cell-value row-cell-max-width ">
 						<div class="cell-content-wrapper filter-wrapper propertieslist">
-							<div class="add-filter-button" ng-repeat="x in ChildNode.SelectedObjectType.propertiesArray | orderBy:'name'" ><a class="btn-add-filter btn page-action" ng-class="(ChildNode.propertiesToSelect[x.scriptName]==true) ? ['selected'] : []" ng-click="toggle(ChildNode.propertiesToSelect,x.scriptName)">{{x.name}}</a></div>
+							<div class="add-filter-button" ng-repeat="x in ChildNode.SelectedObjectType.propertiesArray | orderBy:'name'" ><a class="btn-add-filter btn page-action" ng-class="(ChildNode.propertiesToSelect[x.scriptName]==true) ? ['selected'] : ['unselected']" ng-click="toggle(ChildNode.propertiesToSelect,x.scriptName)">{{x.name}}</a></div>
 							</div>	
 						</div>
 					</div>
