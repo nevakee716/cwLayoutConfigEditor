@@ -2,8 +2,8 @@
 
 /*global cwAPI, jQuery, cwConfigurationEditorMapping */
 (function (cwApi, $) {
-    "use strict";
-  
+  "use strict";
+
   var cwLayoutConfigEditor;
 
   cwLayoutConfigEditor = function (options, viewSchema) {
@@ -13,21 +13,25 @@
   };
 
   cwLayoutConfigEditor.prototype.applyJavaScript = function () {
-    var that = this, objectCategory = this.mainObject.properties.type, layoutEngine;
-    if (cwApi.isUndefined(objectCategory) || !cwConfigurationEditorMapping[objectCategory]){
-    	return;
+    var that = this,
+      objectCategory = this.mainObject.properties.type,
+      layoutEngine;
+    if (cwApi.isUndefined(objectCategory) || !cwConfigurationEditorMapping[objectCategory]) {
+      return;
     }
 
-    $('#navview-' + this.viewSchema.ViewName).removeClass('cw-view-tab-disable');
-    cwApi.CwAsyncLoader.load('angular', function () {
-      var loader = cwApi.CwAngularLoader, templatePath, $container = $('#' + that.domId);
+    $("#navview-" + this.viewSchema.ViewName).removeClass("cw-view-tab-disable");
+    cwApi.CwAsyncLoader.load("angular", function () {
+      var loader = cwApi.CwAngularLoader,
+        templatePath,
+        $container = $("#" + that.domId);
       loader.setup();
       layoutEngine = new cwApi.cwLayoutsEngine[cwConfigurationEditorMapping[objectCategory]](that.mainObject, loader);
-      templatePath = layoutEngine.getTemplatePath('cwLayoutConfigEditor', 'cwLayoutConfigEditor');
+      templatePath = layoutEngine.getTemplatePath("cwLayoutConfigEditor", "cwLayoutConfigEditor");
       layoutEngine.init(that.config);
-      loader.loadControllerWithTemplate('cwLayoutConfigEditor', $container, templatePath, function ($scope) {
+      loader.loadControllerWithTemplate("cwLayoutConfigEditor", $container, templatePath, function ($scope) {
         $scope.operationTemplatePath = layoutEngine.getOperationTemplatePath();
-        $scope.submit = function(e){
+        $scope.submit = function (e) {
           e.preventDefault();
           layoutEngine.saveConfiguration($scope);
         };
@@ -43,17 +47,21 @@
   };
 
   cwLayoutConfigEditor.prototype.drawAssociations = function (output, associationTitleText, object) {
+    var cleanJSON = function (json) {
+      let c = json.replaceAll('\\\\\\"', "#§#§#");
+      c = c.replaceAll('\\"', '"');
+      c = c.replaceAll("#§#§#", '\\"');
+      return c;
+    };
+
     /*jslint unparam:true*/
     this.mainObject = object.associations[this.nodeID][0];
     this.config = {};
-    if (cwApi.cwPropertiesGroups.formatMemoProperty(this.mainObject.properties.configuration) !== ''){
-      this.config = JSON.parse(cwApi.cwPropertiesGroups.formatMemoProperty(this.mainObject.properties.configuration));
+    if (cwApi.cwPropertiesGroups.formatMemoProperty(this.mainObject.properties.configuration) !== "") {
+      this.config = JSON.parse(cleanJSON(this.mainObject.properties.configuration));
     }
-    this.domId = 'zone_' + this.viewSchema.ViewName;
+    this.domId = "zone_" + this.viewSchema.ViewName;
   };
 
   cwApi.cwLayouts.cwLayoutConfigEditor = cwLayoutConfigEditor;
-
-
-
-}(cwAPI, jQuery));
+})(cwAPI, jQuery);
