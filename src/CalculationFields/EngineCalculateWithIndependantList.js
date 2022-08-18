@@ -1,11 +1,11 @@
 /* Copyright (c) 2012-2016 Casewise Systems Ltd (UK) - All rights reserved */
 /*global cwAPI, jQuery*/
-(function(cwApi) {
+(function (cwApi) {
   "use strict";
 
   var cwEngine, getAllAvailableObjectType, loadConfiguration;
 
-  getAllAvailableObjectType = function(that) {
+  getAllAvailableObjectType = function (that) {
     var otScriptName,
       allOts = cwApi.mm.getMetaModel().objectTypes;
     that.availableObjectTypes = {};
@@ -16,7 +16,7 @@
     }
   };
 
-  loadConfiguration = function(that, config) {
+  loadConfiguration = function (that, config) {
     var i, f;
     if (!cwApi.isUndefined(config)) {
       that.Operator = config.Operation;
@@ -39,10 +39,11 @@
         that.ResultObjectType.IdentifierProperty = that.ResultObjectType.properties[config.IdentifierPropertyScriptName];
         that.ResultObjectType.IdentifierPropertyValue = config.IdentifierPropertyValue;
         that.CreateOptions = config.CreateOptions;
-        if (that.CreateOptions.Create === true) {
-          that.ResultObjectType.AssociationTypes.every(function(a) {
+        if (that.CreateOptions?.Create === true) {
+          that.ResultObjectType.AssociationTypes.every(function (a) {
             if (a.ScriptName === that.CreateOptions.TargetAssociationScriptName) {
-              that.ResultObjectType.ResultProperty = that.availableObjectTypes[a.TargetObjectTypeScriptName.toLowerCase()].properties[config.ResultPropertyScriptName];
+              that.ResultObjectType.ResultProperty =
+                that.availableObjectTypes[a.TargetObjectTypeScriptName.toLowerCase()].properties[config.ResultPropertyScriptName];
               return false;
             }
             return true;
@@ -53,7 +54,7 @@
     }
   };
 
-  cwEngine = function(config) {
+  cwEngine = function (config) {
     this.Node = {};
     this.Node.SelectedObjectType = {};
     this.Node.SelectedObjectType.Operand = {};
@@ -70,7 +71,7 @@
     loadConfiguration(this, config);
   };
 
-  cwEngine.prototype.GetConfigurationToSave = function(json) {
+  cwEngine.prototype.GetConfigurationToSave = function (json) {
     var f, i;
     // Important : $type must be 1st attribute
     json.$type = "CalculationFields.JSON.OperationNodeJsonCalculateWithIndependantList, CalculationFields";
@@ -91,7 +92,7 @@
     // operand
     json.OperandPropertyScriptName = this.Node.SelectedObjectType.Operand.scriptName;
     json.ResultObjectTypeScriptName = this.ResultObjectType.scriptName;
-    json.CreateOptions = this.CreateOptions;
+    json.CreateOptions = this.CreateOptions ?? { Create: false };
     if (!cwApi.isUndefined(this.ResultObjectType.IdentifierProperty) && !cwApi.isUndefined(this.ResultObjectType.IdentifierProperty.scriptName)) {
       json.IdentifierPropertyScriptName = this.ResultObjectType.IdentifierProperty.scriptName;
       json.IdentifierPropertyValue = this.ResultObjectType.IdentifierPropertyValue;
@@ -99,16 +100,16 @@
     json.DefaultValues = this.DefaultValues;
   };
 
-  cwEngine.prototype.run = function($scope) {
+  cwEngine.prototype.run = function ($scope) {
     var that = this;
-    $scope.resetPropertyIdentifier = function() {
+    $scope.resetPropertyIdentifier = function () {
       that.ResultObjectType.IdentifierProperty = {};
       that.ResultObjectType.IdentifierPropertyValue = null;
     };
 
-    $scope.getAssociatedProperties = function(s) {
+    $scope.getAssociatedProperties = function (s) {
       var r;
-      that.ResultObjectType.AssociationTypes.forEach(function(a) {
+      that.ResultObjectType.AssociationTypes.forEach(function (a) {
         if (a.ScriptName === s) {
           r = a.TargetObjectTypeScriptName;
         }

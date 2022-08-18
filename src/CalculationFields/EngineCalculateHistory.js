@@ -45,19 +45,9 @@
         }
         that.Node.ChildNode.TargetObjectType =
           that.availableObjectTypes[that.Node.ChildNode.SelectedAssociationType.TargetObjectTypeScriptName.toLowerCase()];
-        if (that.Node.ChildNode.TargetObjectType && that.availableObjectTypes.hasOwnProperty(that.Node.ChildNode.TargetObjectType.scriptName)) {
-          // filters
-          for (i = 0; i < config.CwLightNodeObjectType.AssociationTypeNodes[0].Filters.length; i += 1) {
-            f = config.CwLightNodeObjectType.AssociationTypeNodes[0].Filters[i];
-            that.Node.ChildNode.Filters.push({ ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value });
-          }
-          // properties
-          if (that.OperandOnIntersection) {
-            that.Node.ChildNode.IntersectionNode.ObjectType.OperandPropertyScriptName = config.OperandPropertyScriptName.toLowerCase();
-          } else {
-            that.Node.ChildNode.TargetObjectType.Operand =
-              that.Node.ChildNode.TargetObjectType.properties[config.OperandPropertyScriptName.toLowerCase()];
-          }
+
+        for (i = 0; i < config.ValuesToUpdate.length; i += 1) {
+          that.Node.Values.push({ ScriptName: config.ValuesToUpdate[i].scriptname, TargetScriptName: config.ValuesToUpdate[i].targetscriptname });
         }
       }
     }
@@ -79,15 +69,13 @@
   cwEngine.prototype.GetConfigurationToSave = function (json) {
     var f, i, aNode;
     // Important : $type must be 1st attribute
-    json.$type = "CalculationFields.JSON.OperationNodeJsonCalculateWithList, CalculationFields";
+    json.$type = "CalculationFields.JSON.OperationNodeJsonCalculateHistory, CalculationFields";
     json.CwLightNodeObjectType = {
       ObjectTypeScriptName: this.Node.SelectedObjectType.scriptName,
       Properties: ["id", "name"],
       Filters: [],
     };
-    json.Operation = this.Operator;
-    json.ResultPropertyScriptName = this.Node.ResultProperty.scriptName;
-    json.OperandOnIntersection = this.OperandOnIntersection;
+
     // filters
     for (i = 0; i < this.Node.Filters.length; i += 1) {
       f = this.Node.Filters[i];
@@ -101,27 +89,26 @@
       IntersectionProperties: [],
       IntersectionFilters: [],
     };
-    // operand
-    if (this.OperandOnIntersection) {
-      json.OperandPropertyScriptName = this.Node.ChildNode.IntersectionNode.ObjectType.OperandPropertyScriptName.toLowerCase();
-      aNode.IntersectionProperties.push(json.OperandPropertyScriptName);
-    } else {
-      json.OperandPropertyScriptName = this.Node.ChildNode.TargetObjectType.Operand.scriptName.toLowerCase();
-      aNode.Properties.push(json.OperandPropertyScriptName);
-    }
-    for (i = 0; i < this.Node.ChildNode.Filters.length; i += 1) {
-      f = this.Node.ChildNode.Filters[i];
-      aNode.Filters.push({ ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value });
-    }
-    for (i = 0; i < this.Node.ChildNode.IntersectionNode.Filters.length; i += 1) {
-      f = this.Node.ChildNode.IntersectionNode.Filters[i];
-      aNode.IntersectionFilters.push({ ScriptName: f.ScriptName, Operator: f.Operator, Value: f.Value });
-    }
+
     json.CwLightNodeObjectType.AssociationTypeNodes = [aNode];
+    json.ValuesToUpdate = this.Node.Values.map((v) => {
+      return { scriptname: v.ScriptName, targetscriptname: v.TargetScriptName };
+    });
   };
 
   cwEngine.prototype.run = function ($scope) {
     var that = this;
+
+    $scope.arrayProp = function () {
+      if (!that.Node.SelectedObjectType) return;
+      that.Node.SelectedObjectType.propertiesArray = that.Node.SelectedObjectType?.propertiesArray?.concat([
+        { name: "_Current Year", scriptName: "@currentYear" },
+        { name: "_Current Month", scriptName: "@currentMonth" },
+        { name: "_Current Day", scriptName: "@currentDay" },
+      ]);
+    };
+
+    $scope.arrayProp();
     $scope.setTargetObjectType = function () {
       var ot = that.availableObjectTypes[that.Node.ChildNode.SelectedAssociationType.TargetObjectTypeScriptName.toLowerCase()];
       if (!cwApi.isUndefined(ot)) {
@@ -142,14 +129,6 @@
 
     $scope.resetValue = function (value) {
       value.Value = "";
-    };
-
-    $scope.arrayProp = function (ot) {
-      ot.propertiesArray = ot.propertiesArray.concat([
-        { name: "_Current Year", scriptName: "@currentYear" },
-        { name: "_Current Month", scriptName: "@currentMonth" },
-        { name: "_Current Day", scriptName: "@currentDay" },
-      ]);
     };
   };
 
